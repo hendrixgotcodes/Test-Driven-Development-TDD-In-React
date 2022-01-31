@@ -41,9 +41,22 @@ test('renders counter display',()=>{
 
 test('counter display starts at 0',()=>{
 
+  const wrapper = setup()
+  const count = findByTestAttribute(wrapper, "count").text()
+  expect(count).toBe("0")
+
 })
 
 test('clicking button increments counter display',()=>{
+
+  const wrapper = setup()
+  const incrementButton = findByTestAttribute(wrapper, 'increment-button')
+  
+  incrementButton.simulate("click")
+
+  const count = findByTestAttribute(wrapper, "count").text()
+  expect(count).toBe("1")
+
 
 })
 
