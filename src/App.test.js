@@ -60,4 +60,12 @@ test('clicking button increments counter display',()=>{
 
 })
 
+test('clicking button decrements counter display',()=>{
+
+  const wrapper  = setup()
+  const decrementButton = findByTestAttribute(wrapper, 'decrement-button')
+
+  decrementButton.simulate("click")
+  
+})
 
